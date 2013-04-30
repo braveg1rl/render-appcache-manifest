@@ -2,7 +2,29 @@
 
 Renders HTML5 application cache manifest.
 
+See also [parse-appcache-manifest](http://npmjs.org/package/parse-appcache-manifest).
+
 ## Usage
+
+```javascript
+renderManifest = require "render-appcache-manifest"
+renderManifest(contents)
+```
+
+`renderManifest` returns the rendered manifest as a string.  
+`contents` is an object that can have the following properties, all optional:
+
+* `cache` - an array of entries (urls) you want in the `CACHE` section.
+* `network` - an array of entries (urls or url-patterns, using wildcards) you want in the `NETWORK` section
+* `fallback` - an object with key-value pairs where key is the url or url-pattern to capture, and value is the fallback url. They will appear in the `FALLBACK` section.
+* `unique` - if set to a truthy value, will add result of `Math.random()` as a comment, guaranteeing uniqueness.
+* `lastModified` - a `Date` object. Will be used to generate a "Last modified at" comment.
+* `comment` - a comment string.
+* `comments` - an array of comment strings, each comment will take up one line.
+
+There's no way to control layout of the generated manifest. The output will be generally neat.
+
+render-appcache-manifest will not validate the correctness of input. You are responsible for providing corrent urls or url-patterns, where appropriate. Also, adding a multi-line string as a comment will break the manifest.
 
 ## Credits
 
