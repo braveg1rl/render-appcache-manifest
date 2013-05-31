@@ -3,7 +3,7 @@ render = require "../"
 
 describe "renderAppcacheManifest", ->
 
-  it "renders an appcache manfiest", ->
+  it "renders an appcache manfiest with cache, network, and fallback", ->
     expected = """
     CACHE MANIFEST
 
@@ -28,3 +28,11 @@ describe "renderAppcacheManifest", ->
         foo: "bar"
         fizz: "buzz"
     assert.equal expected, actual
+    assert.equal(actual.indexOf("# Math.random() == "), -1)
+
+  it "renders a unique appcache manfiest", ->
+    actual = render
+      cache: ["a","b","c","bar","buzz"]
+      network: ["*","*/*"]
+      unique: yes
+    assert.notEqual(actual.indexOf("# Math.random() == "), -1)
