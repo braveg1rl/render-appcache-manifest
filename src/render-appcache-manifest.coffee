@@ -20,7 +20,5 @@ module.exports = (data) ->
   lines.push "" if data.timestamp or data.unique
   lines.push "# #{comment}" for comment in data.comments
   lines.push "# Last modified at #{data.lastModified.toUTCString()}." if data.lastModified
-  if data.unique
-    now = new Date
-    lines.push "# Math.random() == #{Math.random()}"
+  lines.push "# Math.random() == #{Math.random()}" if data.unique
   lines.join "\n"
