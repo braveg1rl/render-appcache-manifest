@@ -27,3 +27,10 @@ describe "renderAppcacheManifest", ->
       fallback:
         foo: "bar"
         fizz: "buzz"
+  
+  it "renders a unique appcache manfiest", ->
+    actual = render
+      cache: ["a","b","c","bar","buzz"]
+      network: ["*","*/*"]
+      unique: yes
+    assert ~actual.indexOf("# Math.random() == ")
