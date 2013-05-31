@@ -20,7 +20,7 @@ fizz buzz
 """
 
 describe "renderAppcacheManifest", ->
-  it "renders an appcache manfiest", ->
+  it "renders an appcache manifest", ->
     assert.equal expected, render
       cache: ["a","b","c","bar","buzz"]
       network: ["*","*/*"]
