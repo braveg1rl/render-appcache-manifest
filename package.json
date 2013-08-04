@@ -17,7 +17,7 @@
   },
   "engines": {
     "node": "0.10.x",
-    "npm": "1.2.x"
+    "npm": ">= 1.2.x"
   },
   "main": "lib/render-appcache-manifest.js",
   "scripts": {
