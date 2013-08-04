@@ -1,7 +1,7 @@
 {
   "name": "render-appcache-manifest",
   "description": "Renders HTML5 application cache manifest.",
-  "keywords": [],
+  "keywords": [ "HTML5", "appcache", "manifest" ],
   "version": "0.2.0",
   "author": "Meryn Stol <merynstol@gmail.com>",
   "license": "MIT",
