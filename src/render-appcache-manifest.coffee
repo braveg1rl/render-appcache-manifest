@@ -1,4 +1,6 @@
-module.exports = (data) ->
+module.exports = (data, opts={}) ->
+  if opts.tokenized
+    return fromTokens data
   data.cache = [] unless data.cache
   data.network = [] unless data.network
   data.fallback = {} unless data.fallback
@@ -22,3 +24,24 @@ module.exports = (data) ->
   lines.push "# Last modified at #{data.lastModified.toUTCString()}." if data.lastModified
   lines.push "# Math.random() == #{Math.random()}" if data.unique
   lines.join "\n"
+
+# generate an appcache manifest by traversing a list of tokens
+fromTokens = (tokens) ->
+  # TODO: group modes together in the output
+  out = ''
+  for t in tokens
+    if t.type is 'magic signature'
+      line = t.value
+    else if t.type is 'newline'
+      line = ''
+    else if t.type is 'comment'
+      line = '# ' + t.value 
+    else if t.type is 'mode'
+      line = t.value + ':'
+    else if t.type is 'data'
+      line = t.tokens.join ' '
+    else
+      line = null
+    if line
+      out = out + line + '\n'
+  out
