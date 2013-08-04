@@ -30,18 +30,17 @@ fromTokens = (tokens) ->
   # TODO: group modes together in the output
   out = ''
   for t in tokens
+    line = null
     if t.type is 'magic signature'
       line = t.value
     else if t.type is 'newline'
-      line = ''
+      out += '\n'
     else if t.type is 'comment'
       line = '# ' + t.value 
     else if t.type is 'mode'
       line = t.value + ':'
     else if t.type is 'data'
       line = t.tokens.join ' '
-    else
-      line = null
     if line
       out = out + line + '\n'
   out
