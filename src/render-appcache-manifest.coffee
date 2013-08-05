@@ -1,6 +1,6 @@
-module.exports = (data, opts={}) ->
-  if opts.tokenized
-    return fromTokens data
+module.exports = (data) ->
+  if Array.isArray(data) then return fromTokens(data)
+
   data.cache = [] unless data.cache
   data.network = [] unless data.network
   data.fallback = {} unless data.fallback
@@ -37,7 +37,7 @@ fromTokens = (tokens) ->
       out += '\n'
     else if t.type is 'comment'
       line = '# ' + t.value 
-    else if t.type is 'mode'
+    else if t.type is 'mode' and t.value isnt 'unknown'
       line = t.value + ':'
     else if t.type is 'data'
       line = t.tokens.join ' '
