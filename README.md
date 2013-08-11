@@ -40,6 +40,15 @@ appcacheRender = require 'render-appcache-manifest'
 out = appcacheRender tokens
 ```
 
+## Development
+
+To compile the code:
+
+```sh
+cd render-appcache-manifest
+coffee -cm -o lib/ src/
+```
+
 
 ## Credits
 
