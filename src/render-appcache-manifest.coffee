@@ -36,7 +36,7 @@ fromTokens = (tokens) ->
     else if t.type is 'newline'
       out += '\n'
     else if t.type is 'comment'
-      line = '# ' + t.value 
+      line = '# ' + t.value.trim() 
     else if t.type is 'mode' and t.value isnt 'unknown'
       line = t.value + ':'
     else if t.type is 'data'
