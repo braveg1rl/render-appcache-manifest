@@ -1,6 +1,9 @@
 module.exports = (data) ->
-  if Array.isArray(data) then return fromTokens(data)
+  return fromTokens data if Array.isArray data
+  return fromTokens data if Array.isArray data.tokens
+  return fromObject data
 
+fromObject = (data) ->
   data.cache = [] unless data.cache
   data.network = [] unless data.network
   data.fallback = {} unless data.fallback
