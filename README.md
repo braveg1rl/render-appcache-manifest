@@ -45,10 +45,15 @@ out = appcacheRender tokens
 To compile the code:
 
 ```sh
-cd render-appcache-manifest
-coffee -cm -o lib/ src/
+npm install # once, to get the dev dependencies
+make build
 ```
 
+To test the code:
+
+```sh
+npm test
+```
 
 ## Credits
 
