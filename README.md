@@ -59,4 +59,4 @@ Tokenizing support, settings support, whatwg spec conformance, and updated docum
 ## License
 
 render-appcache-manifest is released under the [MIT License](http://opensource.org/licenses/MIT).  
-Copyright (c) 2013 Meryn Stol  
+Copyright (c) 2013 Meryn Stol, [Michael Reinstein](https://github.com/mreinstein)
