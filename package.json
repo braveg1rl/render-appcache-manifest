@@ -1,8 +1,8 @@
 {
   "name": "render-appcache-manifest",
   "description": "Renders HTML5 application cache manifest.",
-  "keywords": [],
-  "version": "0.1.0",
+  "keywords": [ "HTML5", "appcache", "manifest" ],
+  "version": "0.2.0",
   "author": "Meryn Stol <merynstol@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/meryn/render-appcache-manifest",
@@ -11,16 +11,13 @@
     "type": "git",
     "url": "git://github.com/meryn/render-appcache-manifest.git"
   },
-  "private": false,
-  "dependencies": {},
   "devDependencies": {
     "coffee-script": "~1.6.2",
     "mocha": "1.x"
   },
-  "optionalDependencies": {},
   "engines": {
     "node": "0.10.x",
-    "npm": "1.2.x"
+    "npm": ">= 1.2.x"
   },
   "main": "lib/render-appcache-manifest.js",
   "scripts": {
