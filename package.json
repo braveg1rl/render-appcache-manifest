@@ -16,8 +16,8 @@
     "url": "git://github.com/meryn/render-appcache-manifest.git"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.2",
-    "mocha": "1.x"
+    "coffee-script": "~1.12.4",
+    "mocha": "^3.2.0"
   },
   "engines": {
     "node": "0.10.x",

@@ -1,5 +1,7 @@
 # render-appcache-manifest [![Build Status](https://travis-ci.org/meryn/render-appcache-manifest.png?branch=master)](https://travis-ci.org/meryn/render-appcache-manifest) [![Dependency Status](https://david-dm.org/meryn/render-appcache-manifest.png)](https://david-dm.org/meryn/render-appcache-manifest)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/braveg1rl/render-appcache-manifest.svg)](https://greenkeeper.io/)
+
 Renders HTML5 application cache manifest.
 
 See also [parse-appcache-manifest](http://npmjs.org/package/parse-appcache-manifest).
